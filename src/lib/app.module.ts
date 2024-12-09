@@ -27,4 +27,4 @@ import { ValidationMessageComponent } from './validation-message/validation-mess
   ],
   exports: [AppComponent],
 })
-export class AppModule {}
+export class DynamicForm {}
