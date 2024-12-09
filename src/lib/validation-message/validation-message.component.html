@@ -1,0 +1,166 @@
+<div class="msg-box">
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('required') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["required"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('maxlength') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["maxLength"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control && control.hasError('min') && (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["min"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control && control.hasError('max') && (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["max"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('pattern') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["pattern"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('validateEqual') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["validateEqual"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('validateMandatory') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["validateMandatory"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('validateAnyOnePresence') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["validateAnyOnePresence"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('valAsyncUserEmail') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["valAsyncUserEmail"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('validateMinDate') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["validateMinDate"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('validateMaxDate') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["validateMaxDate"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('validateFileType') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["validateFileType"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('validateAadhaar') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["validateAadhaar"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('runValidateAsync') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["runValidateAsync"] }}
+  </div>
+  <div [style]="cssClass" *ngIf="control && (control.touched || control.dirty)">
+    <div *ngIf="control.hasError('minlength')">
+      {{ errMsg["minLength"] }}
+    </div>
+    <div *ngIf="control.hasError('numberValidator')">
+      {{ errMsg["numberValidator"] }}
+    </div>
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('ip4Validator') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["ip4Validator"] }}
+  </div>
+  <div
+    [style]="cssClass"
+    *ngIf="
+      control &&
+      control.hasError('urlValidator') &&
+      (control.touched || control.dirty)
+    "
+  >
+    {{ errMsg["urlValidator"] }}
+  </div>
+</div>

@@ -1,0 +1,78 @@
+::ng-deep .tblbtn >>> .p-button {
+  background: var(---success-button-background) !important;
+  color: var(---success-button-color) !important;
+  border: var(---button-border) !important;
+  font-size: var(---font-small) !important;
+  padding: var(---button-padding-medium);
+}
+
+::ng-deep .cancel > .p-button {
+  background: var(---cancel-button-background) !important;
+  color: var(---cancel-button-color) !important;
+  border: var(---button-border) !important;
+  font-size: var(---font-small) !important;
+  padding: var(---button-padding-medium);
+  margin-right: var(---space-x-large);
+}
+
+.subform >>> ::ng-deep .p-dropdown,
+.subform >>> ::ng-deep .p-inputtext,
+.subform >>> ::ng-deep .p-calendar,
+.subform >>> ::ng-deep .p-inputnumber,
+.subform >>> ::ng-deep .p-multiselect,
+.subform >>> ::ng-deep .p-password {
+  width: 50%;
+  border: var(---form-field-border) !important;
+  background-color: var(---form-field-background) !important;
+  font-size: var(---font-small) !important;
+}
+
+.multiform >>> ::ng-deep .p-dropdown,
+.multiform >>> ::ng-deep .p-inputtext,
+.multiform >>> ::ng-deep .p-calendar,
+.multiform >>> ::ng-deep .p-inputnumber,
+.multiform >>> ::ng-deep .p-multiselect,
+.multiform >>> ::ng-deep .p-password {
+  width: 100%;
+  border: var(---form-field-border) !important;
+  background-color: var(---form-field-background) !important;
+  font-size: var(---font-small) !important;
+}
+
+::ng-deep label {
+  font-size: var(---font-small) !important;
+  position: relative !important;
+  bottom: var(---space-small);
+}
+::ng-deep .p-tabview {
+  width: 100%;
+  font-size: var(---font-small) !important;
+}
+
+::ng-deep .p-tabview-title {
+  font-size: var(---font-small) !important;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  font-weight: var(---tabview-default-font-weight) !important;
+  color: var(---tabview-default-color) !important;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  font-weight: var(---tabview-font-weight) !important;
+  color: var(---tabview-color) !important;
+}
+
+::ng-deep .p-divider .p-divider-content >>> .p-button {
+  background: var(---success-button-background) !important;
+  color: var(---success-button-color) !important;
+  border: var(---button-border) !important;
+}
+
+.subform {
+  font-size: var(---font-small) !important;
+}
+
+.sfrm {
+  margin: var(---space-large);
+}

@@ -1,0 +1,27 @@
+.form >>> ::ng-deep .p-dropdown,
+.form >>> ::ng-deep .p-inputtext,
+.form >>> ::ng-deep .p-calendar,
+.form >>> ::ng-deep .p-inputnumber,
+.form >>> ::ng-deep .p-multiselect,
+.form >>> ::ng-deep .p-password {
+  width: 100%;
+  border: var(---form-field-border) !important;
+  background-color: var(---form-field-background) !important;
+  font-size: var(---font-small) !important;
+}
+
+::ng-deep label {
+  position: relative !important;
+  bottom: var(---space-small);
+  font-size: var(---font-small) !important;
+}
+
+.form {
+  font-size: var(---font-small) !important;
+}
+
+::ng-deep
+  .error
+  >>> li.ui-message.ui-messages-error.ui-corner-all.ng-star-inserted {
+  display: none !important;
+}

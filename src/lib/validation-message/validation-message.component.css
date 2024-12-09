@@ -1,0 +1,9 @@
+:host >>> .ui-message {
+  border: 1px solid #e17055;
+  color: #e17055;
+  background-color: transparent;
+}
+
+.msg-box {
+  background: transparent;
+}

@@ -1,0 +1,106 @@
+<p-tabView *ngIf="subForm.length > 0" [activeIndex]="0">
+  <ng-container *ngFor="let subFormItem of formData(subForm)">
+    <p-tabPanel [header]="subFormItem.display_name">
+      <div *ngIf="!subFormItem.multiple" class="subform">
+        <app-dynamic-form
+          [formLayout]="formLayout"
+          [formGroup]="subFormItem.formGroup"
+          [formModel]="subFormItem.formModel"
+          [update_data]="subFormItem.update_data"
+          (formData)="changeData($event)"
+        ></app-dynamic-form>
+      </div>
+      <div
+        class="grid m-2"
+        style="border: #ced4da 1px solid"
+        *ngIf="subFormItem.multiple"
+      >
+        <div class="col-5 multiform">
+          <app-dynamic-form
+            [formLayout]="formLayout"
+            [formGroup]="subFormItem.formGroup"
+            [formModel]="subFormItem.formModel"
+          ></app-dynamic-form>
+        </div>
+        <p-divider align="center" layout="vertical" class="tblbtn">
+          <p-button
+            icon="pi pi-arrow-right"
+            (onClick)="addMultipleData(subFormItem)"
+          ></p-button>
+        </p-divider>
+        <div class="col-6">
+          <p-table
+            [columns]="subFormItem.columns"
+            [value]="subFormItem.multipleData"
+            [update_data]="subFormItem.update_data"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            [scrollable]="true"
+            scrollHeight="415px"
+          >
+            <ng-template pTemplate="header" let-columns>
+              <tr>
+                <th *ngFor="let col of columns">
+                  {{ col.label }}
+                </th>
+                <th>Action</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+              <tr>
+                <td *ngFor="let col of columns">
+                  {{ rowData[col.id] }}
+                </td>
+                <td>
+                  <i
+                    class="pi pi-trash"
+                    style="cursor: pointer"
+                    (click)="deleteRow(rowData, subFormItem)"
+                  ></i>
+                  <i
+                    class="pi pi-file-edit ml-4"
+                    style="cursor: pointer"
+                    (click)="editRow(rowData, subFormItem)"
+                  ></i>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </p-tabPanel>
+  </ng-container>
+
+  <div class="flex justify-content-center sfrm">
+    <p-button
+      label="Cancel"
+      class="cancel"
+      [outlined]="true"
+      (click)="cancel()"
+    />
+    <app-form-btn
+      [formSubmitted]="formSubmitted"
+      [disabled]="validity"
+      [validity]="validity"
+      [enableLabel]="getEnableLabel()"
+      [disabledLabel]="getDisabledLabel()"
+      (submitted)="onSaveClicked()"
+    ></app-form-btn>
+  </div>
+</p-tabView>
+
+<div class="flex justify-content-center sfrm" *ngIf="subForm.length == 0">
+  <p-button
+    label="Cancel"
+    class="cancel"
+    [outlined]="true"
+    (click)="cancel()"
+  />
+  <app-form-btn
+    [formSubmitted]="formSubmitted"
+    [disabled]="validity"
+    [validity]="validity"
+    [enableLabel]="getEnableLabel()"
+    [disabledLabel]="getDisabledLabel()"
+    (submitted)="onSaveClicked()"
+  ></app-form-btn>
+</div>

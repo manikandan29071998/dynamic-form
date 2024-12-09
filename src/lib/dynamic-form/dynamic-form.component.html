@@ -1,0 +1,27 @@
+<div [class]="structure()">
+  <dynamic-primeng-form-control
+    *ngFor="let formModel of formModel"
+    [class]="colStruct()"
+    [group]="formGroup"
+    [model]="formModel"
+    (input)="inputEnter(formGroup.value)"
+    (change)="inputEnter(formGroup.value)"
+    (change)="inputChange(formGroup.value)"
+  >
+    <div
+      style="height: 11px"
+      *ngIf="formModel.errorMessages !== null || undefined"
+    >
+      <app-validation-message
+        [cssClass]="getErrMsgCss(formModel.id)"
+        [control]="getValidationControl(formModel.id)"
+        [controlModel]="formModel"
+        [errMsg]="formModel.errorMessages"
+      ></app-validation-message>
+    </div>
+    <div
+      style="height: 11px"
+      *ngIf="formModel.errorMessages === null || undefined"
+    ></div>
+  </dynamic-primeng-form-control>
+</div>
